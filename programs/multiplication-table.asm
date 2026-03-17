@@ -1,0 +1,16 @@
+ADD #12
+STA 1
+INP
+STA	0	
+
+LDA	2	
+ADD	0
+STA	2
+OUT
+	
+LDA	1
+SUB	#1
+STA	1
+BRP	4
+
+HLT

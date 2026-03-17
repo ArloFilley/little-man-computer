@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="https://andremaha.github.io/md2html/css/screen.css"></link><body><h1>LMC Simulator</h1>
+<h2>Specs</h2>
+<p>Ram consists of a 128 size array of i16 values</p>
+<h2>Instructions</h2>
+<p>| Instruction   | Description                                                           |
+| ------------- | --------------------------------------------------------------------- |
+| Add ...       | Adds value in the accumulator                                         |
+| Sub ...       | Subtracts value in the accumulator                                    |
+| Lda ...       | Load from memory address to accumulator                               |
+| Sta ...       | Store accumulator value at memory adress                              |
+| INP           | Gets user input and stores in the accumulator                         |
+| OUT           | Prints the value in the acumulator                                    |
+| BRP ...       | Branches to instruction number if value in accumulator is positive    |
+| BRZ ...       | Branches to instruction number if value in accumulator is zero        |
+| BRA ...       | Always branches to instruction number                                 |
+| HLT           | Stops the program                                                     |</p>
+<h2>Addressing Modes</h2>
+<p>| Mode          | Description                                                   |<br />
+| ------------- | ------------------------------------------------------------- |
+| Immediate (#) | uses value provided                                           |
+| Direct    (&amp;) | uses value in memory address                                  |
+| Indirect  (@) | uses value in memory address to point to used memory adress   |
+| Indexed (TODO)| TODO!                                                         |</p>
+</body></head></html>
