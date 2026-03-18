@@ -81,7 +81,7 @@ See 'cargo help <command>' for more information on a specific command.
 
 1. Clone this [repo](https://github.com/ArloFilley/lmc-simulator)
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/ArloFilley/lmc-simulator.git
    ```
 2. Build with Cargo
    ```sh
@@ -104,7 +104,7 @@ Options:
 ```
 
 - For example programs, checkout out the [Examples Folder](/examples)
-- For a full list of inscructions, read [Instructions.md][/instructions.md]
+- For a full list of inscructions, read [Instructions.md](/Instructions.md)
 
 ## Contributing
 
