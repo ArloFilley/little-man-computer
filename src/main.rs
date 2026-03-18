@@ -12,10 +12,11 @@ mod instruction;
 use crate::parser::{ParseError, parse};
 use crate::cpu::CPU;
 
-/// Simple program to greet a person
+/// Little Man Computer Simulator
 #[derive(Parser, Debug)]
 #[command(author, version, about, long_about = None)]
 struct Args {
+    // Input File Path
     #[arg(short, long)]
     input_file: PathBuf,
 }
@@ -28,6 +29,7 @@ fn main() -> Result<(), ParseError> {
     let Ok(program) = fs::read_to_string(args.input_file) else {
         return Err(ParseError::InvalidString);
     };
+
     let enc = parse(&program)?;
     let mut cpu = CPU::new();
     cpu.mem_set(enc);
