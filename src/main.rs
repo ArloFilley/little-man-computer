@@ -1,7 +1,16 @@
 use clap::Parser;
+use clap::error::Error;
 
+use std::num::ParseIntError;
 use std::path::PathBuf;
 use std::fs;
+
+mod cpu;
+mod parser;
+mod instruction;
+
+use crate::parser::{ParseError, parse};
+use crate::cpu::CPU;
 
 /// Simple program to greet a person
 #[derive(Parser, Debug)]
@@ -9,19 +18,20 @@ use std::fs;
 struct Args {
     #[arg(short, long)]
     input_file: PathBuf,
-
-    /// Number of times to greet
-    #[arg(short, long, default_value_t = 1)]
-    count: u8,
 }
 
 
 /// Entry point
-fn main() {
+fn main() -> Result<(), ParseError> {
     let args = Args::parse();
 
-    if let Ok(file) = fs::read_to_string(args.input_file) {
-        println!("{file}");
-    }
-
+    let Ok(program) = fs::read_to_string(args.input_file) else {
+        return Err(ParseError::InvalidString);
+    };
+    let enc = parse(&program)?;
+    let mut cpu = CPU::new();
+    cpu.mem_set(enc);
+    let _ = cpu.run();
+    
+    Ok(())
 }

@@ -1,0 +1,10 @@
+OUT         // 0
+ADDIMM 3    // 3
+OUT         // 3
+STA 0       // stores 3 at memory address 0
+OUT         // 3
+SUB 4       // -1
+OUT         // -1
+LDA 0       // loads 3 from ram address 0
+OUT         //  3
+HLT         // halts

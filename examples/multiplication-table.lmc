@@ -1,0 +1,17 @@
+        INP
+        STA	        Table
+
+Loop    LDA             Count
+        ADD	        Table
+        STA	        Count
+        OUT
+	
+        LDA	        Twelve
+        SUBIMM      1
+        STA	        Twelve
+        BRP	        Loop
+        HLT
+
+Count   DAT 0
+Table   DAT
+Twelve  DAT 12

@@ -1,5 +1,4 @@
 # LMC Simulator
-
 ## Specs
 
 Ram consists of a 128 size array of i16 values
