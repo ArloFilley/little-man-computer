@@ -23,43 +23,85 @@ A blazing fast interpreter and simulator for the world's most basic computer and
 * Built with rust for incredibly fast emulation
 
 ## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
-
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+* [Rust](https://rustup.rs)
+* [Cargo](https://rustup.rs) package manager (installed with rustup script)
   
+Check Cargo is installed
 ```sh
-npm install npm@latest -g
+cargo --help
+```
+
+Should show the following 
+```sh
+Rust's package manager
+
+Usage: cargo [+toolchain] [OPTIONS] [COMMAND]
+       cargo [+toolchain] [OPTIONS] -Zscript <MANIFEST_RS> [ARGS]...
+
+Options:
+  -V, --version                  Print version info and exit
+      --list                     List installed commands
+      --explain <CODE>           Provide a detailed explanation of a rustc error message
+  -v, --verbose...               Use verbose output (-vv very verbose/build.rs output)
+  -q, --quiet                    Do not print cargo log messages
+      --color <WHEN>             Coloring [possible values: auto, always, never]
+  -C <DIRECTORY>                 Change to DIRECTORY before doing anything (nightly-only)
+      --locked                   Assert that `Cargo.lock` will remain unchanged
+      --offline                  Run without accessing the network
+      --frozen                   Equivalent to specifying both --locked and --offline
+      --config <KEY=VALUE|PATH>  Override a configuration value
+  -Z <FLAG>                      Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
+  -h, --help                     Print help
+
+Commands:
+    build, b    Compile the current package
+    check, c    Analyze the current package and report errors, but don't build object files
+    clean       Remove the target directory
+    doc, d      Build this package's and its dependencies' documentation
+    new         Create a new cargo package
+    init        Create a new cargo package in an existing directory
+    add         Add dependencies to a manifest file
+    remove      Remove dependencies from a manifest file
+    run, r      Run a binary or example of the local package
+    test, t     Run the tests
+    bench       Run the benchmarks
+    update      Update dependencies listed in Cargo.lock
+    search      Search registry for crates
+    publish     Package and upload this package to the registry
+    install     Install a Rust binary
+    uninstall   Uninstall a Rust binary
+    ...         See all commands with --list
+
+See 'cargo help <command>' for more information on a specific command.
 ```
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone this [repo](https://github.com/ArloFilley/lmc-simulator)
    ```sh
    git clone https://github.com/github_username/repo_name.git
    ```
-3. Install NPM packages
+2. Build with Cargo
    ```sh
-   npm install
+   cargo build --release
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-5. Change git remote url to avoid accidental pushes to base project
-   ```sh
-   git remote set-url origin github_username/repo_name
-   git remote -v # confirm the changes
-   ```
+3. Find the executable at target/release/lmc-simulator
+   * On Windows at target/release/lmc-simulator.exe
 
 ## Usage
+
+```
+Little Man Computer Simulator
+
+Usage: lmc-simulator --input-file <INPUT_FILE>
+
+Options:
+  -i, --input-file <INPUT_FILE>  
+  -h, --help                     Print help
+  -V, --version                  Print version
+```
 
 - For example programs, checkout out the [Examples Folder](/examples)
 - For a full list of inscructions, read [Instructions.md][/instructions.md]
